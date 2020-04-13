@@ -1,4 +1,4 @@
-# 								Harry Potter
+# <p align="center">Harry Potter</p>
 
 badge
 
