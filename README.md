@@ -7,7 +7,7 @@ Fetch data from the network via repository pattern.</p>
 
 <br>
 
-photo
+![logo](https://github.com/hongbeomi/HarryPotter/blob/master/preview/logo.png)
 
 <br>
 
