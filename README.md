@@ -5,8 +5,6 @@ badge
 <p align="center">Harry Potter Application is sample based on MVVM architecture.</br>
 Fetch data from the network via repository pattern.</p>
 
-<br>
-
 ![logo](https://github.com/hongbeomi/HarryPotter/blob/master/preview/logo.png)
 
 <br>
@@ -39,4 +37,4 @@ Go to ths Release to download the APK
 
 Harry Potter does not use a Local database.
 
-photo
+![architecture](https://github.com/hongbeomi/HarryPotter/blob/master/preview/mvvm.png)
