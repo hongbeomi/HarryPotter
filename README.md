@@ -1,6 +1,4 @@
-<p align="center" style="font-size: 24pt">Harry Potter</p>
-
-----
+# 								Harry Potter
 
 badge
 
