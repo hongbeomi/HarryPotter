@@ -39,10 +39,6 @@ dependencies {
     implementation "androidx.cardview:cardview:${versions.card}"
     implementation "androidx.recyclerview:recyclerview:${versions.recyclerView}"
 
-
-    // logger dependencies
-    implementation "com.orhanobut:logger:${versions.logger}"
-
     // aac dependencies
     implementation "androidx.lifecycle:lifecycle-viewmodel:${versions.lifecycle}"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}"
@@ -57,9 +53,6 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp-urlconnection:${versions.okhttp}"
     implementation "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}"
 
-    // circle image view
-    implementation "de.hdodenhof:circleimageview:${versions.circleImageView}"
-
     // image loading
     implementation "com.github.bumptech.glide:glide:${versions.glide}"
     annotationProcessor "com.github.bumptech.glide:compiler:${versions.glide}"
@@ -67,9 +60,6 @@ dependencies {
     // coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}"
-
-    // logger dependencies
-    implementation "com.orhanobut:logger:${versions.logger}"
 
     // discrete scrollview
     implementation "com.yarolegovich:discrete-scrollview:${versions.discreteScrollview}"
