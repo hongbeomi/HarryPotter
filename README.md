@@ -38,3 +38,9 @@ Go to ths Release to download the APK
 Harry Potter does not use a Local database.
 
 ![architecture](https://github.com/hongbeomi/HarryPotter/blob/master/preview/mvvm.png)
+
+<br>
+
+## 🌟 Find this project useful?
+
+Support it by joining [stargazers](https://github.com/hongbeomi/HarryPotter/stargazers) for this repository
