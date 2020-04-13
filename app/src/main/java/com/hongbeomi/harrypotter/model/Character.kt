@@ -16,5 +16,4 @@ data class Character(
     val actor: String,
     val alive: Boolean,
     val image: String
-) : Parcelable,
-    Any()
+) : Parcelable
