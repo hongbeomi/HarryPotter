@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DtonatorPreferences">
+    <option name="classType" value="SINGLE_FILE_WITH_INNER_CLASS" />
+    <option name="customAnnotationPattern" value="@annotationTextHere(&quot;%s&quot;)" />
+    <option name="encapsulete">
+      <list>
+        <option value="PROVIDE_PRIVATE_FIELD" />
+      </list>
+    </option>
+    <option name="fieldType" value="GSON_EXPOSE" />
+    <option name="languageType" value="KOTLIN_VAL" />
+    <option name="naming">
+      <list>
+        <option value="CAMEL_CASE" />
+      </list>
+    </option>
+  </component>
+</project>

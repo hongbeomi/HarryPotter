@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="character"
+            type="com.hongbeomi.harrypotter.model.Character" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/constraintLayout_dialog_area"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:lottie_rawRes="@raw/lightning"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    <ImageView
+        android:id="@+id/imageView_dialog_detail_photo"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:minHeight="160dp"
+        android:scaleType="fitXY"
+        android:background="@drawable/bg_dialog_photo"
+        bind:loadUrl="@{character.image}"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/textView_dialog_alive"
+        tools:src="@drawable/sample"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_dialog_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@{character.name}"
+        android:textSize="20sp"
+        android:layout_marginStart="@dimen/dp_16"
+        app:layout_constraintTop_toTopOf="@id/imageView_dialog_detail_photo"
+        app:layout_constraintStart_toEndOf="@id/imageView_dialog_detail_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/girassol_regular"
+        style="@style/TextViewDialog"
+        tools:text="Harry Potter" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_dialog_species"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@{`species : `+ character.species}"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textView_dialog_name"
+        app:layout_constraintStart_toStartOf="@id/textView_dialog_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/TextViewDialog"
+        tools:text="human" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_dialog_gender"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@{`gender : ` + character.gender}"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textView_dialog_species"
+        app:layout_constraintStart_toStartOf="@id/textView_dialog_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/TextViewDialog"
+        tools:text="male" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_dialog_house"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@{`house : ` + character.house}"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textView_dialog_gender"
+        app:layout_constraintStart_toStartOf="@id/textView_dialog_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/TextViewDialog"
+        tools:text="Gryffindor" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_dialog_dateOfBirth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@{`dateOfBirth : ` + character.dateOfBirth}"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textView_dialog_house"
+        app:layout_constraintStart_toStartOf="@id/textView_dialog_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/TextViewDialog"
+        tools:text="31-07-1980" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_dialog_yearOfBirth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@{`yearOfBirth : ` + character.yearOfBirth}"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textView_dialog_dateOfBirth"
+        app:layout_constraintStart_toStartOf="@id/textView_dialog_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/TextViewDialog"
+        tools:text="1980" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_dialog_ancestry"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@{`ancestry : ` + character.ancestry}"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textView_dialog_yearOfBirth"
+        app:layout_constraintStart_toStartOf="@id/textView_dialog_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/TextViewDialog"
+        tools:text="half-blood" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_dialog_patronus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@{`patronus : ` + character.patronus}"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textView_dialog_ancestry"
+        app:layout_constraintStart_toStartOf="@id/textView_dialog_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/TextViewDialog"
+        tools:text="stag" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_dialog_actor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@{`actor : ` + character.actor}"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textView_dialog_patronus"
+        app:layout_constraintStart_toStartOf="@id/textView_dialog_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/TextViewDialog"
+        tools:text="Daniel Radcliffe" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView_dialog_alive"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@{`alive : ` + (character.alive ? `true` : `false`)}"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textView_dialog_actor"
+        app:layout_constraintStart_toStartOf="@id/textView_dialog_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/TextViewDialog"
+        tools:text="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
