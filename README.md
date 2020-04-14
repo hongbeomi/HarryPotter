@@ -17,7 +17,7 @@ Fetch data from the network via repository pattern.</p>
 
 Go to ths [releases](https://github.com/hongbeomi/HarryPotter/releases/tag/v1.0.0) to download the APK
 
-<img src="https://github.com/hongbeomi/HarryPotter/blob/master/preview/demo.gif" align="right" width="20%"></img>
+<img src="https://github.com/hongbeomi/HarryPotter/blob/master/preview/demo.gif" align="right" width="30%"></img>
 
 <br>
 
@@ -26,7 +26,7 @@ Go to ths [releases](https://github.com/hongbeomi/HarryPotter/releases/tag/v1.0.
 - Minimum SDK level 21
 - [Kotlin](https://kotlinlang.org/) based + [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) for asynchronous.
 - JetPack
-  - LiveData -Build data objects that notify views when the underlying database changes.
+  - LiveData -observable data holder class.
   - Lifecycle - Create a UI that automatically responds to lifecycle events.
   - ViewModel - UI related data holder, Easily schedule asynchronous tasks for optimal execution.
 - [Koin](https://github.com/InsertKoinIO/koin) - dependency injection.
