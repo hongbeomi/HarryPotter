@@ -15,7 +15,9 @@ Fetch data from the network via repository pattern.</p>
 
 ## Download
 
-Go to ths [release](https://github.com/hongbeomi/HarryPotter/releases/tag/v1.0.0) to download the APK
+Go to ths [releases](https://github.com/hongbeomi/HarryPotter/releases/tag/v1.0.0) to download the APK
+
+<img src="https://github.com/hongbeomi/HarryPotter/blob/master/preview/demo.gif" align="right" width="20%"></img>
 
 <br>
 
