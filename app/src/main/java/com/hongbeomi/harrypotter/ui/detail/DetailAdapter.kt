@@ -30,7 +30,7 @@ import com.hongbeomi.harrypotter.model.Character
 
 class DetailAdapter : RecyclerView.Adapter<DetailAdapter.DetailViewHolder>() {
 
-    private var itemList = mutableListOf<Character>()
+    var itemList = listOf<Character>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         DataBindingUtil.inflate<ItemCharacterBinding>(
@@ -47,12 +47,6 @@ class DetailAdapter : RecyclerView.Adapter<DetailAdapter.DetailViewHolder>() {
 
     override fun onBindViewHolder(holder: DetailViewHolder, position: Int) =
         holder.bind(itemList[position])
-
-    fun updateList(list: List<Character>) {
-        itemList.clear()
-        itemList.addAll(list)
-        notifyDataSetChanged()
-    }
 
     inner class DetailViewHolder(private val binding: ItemCharacterBinding) :
         RecyclerView.ViewHolder(binding.root) {

@@ -65,6 +65,8 @@
             android:paddingTop="@dimen/dp_2"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="3"
+            bind:items="@{viewModel.characterList}"
+            bind:itemDeco="@{@dimen/dp_2}"
             bind:background="@{house.color}"
             tools:listitem="@layout/item_character"/>
 
