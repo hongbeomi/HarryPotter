@@ -26,10 +26,7 @@ import com.hongbeomi.harrypotter.model.Character
 import com.hongbeomi.harrypotter.ui.HouseType
 import kotlinx.coroutines.Dispatchers
 
-class DetailViewModel(
-    house: HouseType,
-    private val repository: Repository
-) : ViewModel() {
+class DetailViewModel(house: HouseType, private val repository: Repository) : ViewModel() {
 
     val characterList : LiveData<List<Character>> = liveData(Dispatchers.IO) {
         loading.postValue(true)
