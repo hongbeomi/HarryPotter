@@ -17,20 +17,27 @@ package com.hongbeomi.harrypotter.ui.detail
  *
  **/
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.liveData
+import androidx.hilt.Assisted
+import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.*
 import com.hongbeomi.harrypotter.data.repository.Repository
 import com.hongbeomi.harrypotter.model.Character
 import com.hongbeomi.harrypotter.ui.HouseType
+import com.hongbeomi.harrypotter.ui.detail.DetailActivity.Companion.KEY_HOUSE
 import kotlinx.coroutines.Dispatchers
 
-class DetailViewModel(house: HouseType, private val repository: Repository) : ViewModel() {
+class DetailViewModel @ViewModelInject constructor(
+    @Assisted private val savedStateHandle: SavedStateHandle,
+    private val repository: Repository
+) : ViewModel() {
+
+    private val houseName = savedStateHandle.get<HouseType>(KEY_HOUSE)?.name
 
     val characterList : LiveData<List<Character>> = liveData(Dispatchers.IO) {
         loading.postValue(true)
-        emit(repository.getCharacters(house.name))
+        houseName?.let {
+            emit(repository.getCharacters(it))
+        }
     }
 
     val loading = MutableLiveData<Boolean>()

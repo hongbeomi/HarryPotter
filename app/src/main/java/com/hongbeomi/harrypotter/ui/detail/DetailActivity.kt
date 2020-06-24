@@ -21,19 +21,19 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
+import androidx.activity.viewModels
 import androidx.core.app.ActivityOptionsCompat
 import com.hongbeomi.harrypotter.R
 import com.hongbeomi.harrypotter.base.BaseActivity
 import com.hongbeomi.harrypotter.databinding.ActivityDetailBinding
 import com.hongbeomi.harrypotter.ui.HouseType
-import com.hongbeomi.harrypotter.ui.SpaceItemDecoration
-import org.koin.android.viewmodel.ext.android.viewModel
-import org.koin.core.parameter.parametersOf
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailActivity : BaseActivity() {
 
     companion object {
-        private const val KEY_HOUSE = "house"
+        const val KEY_HOUSE = "house"
         fun startActivityWithTransition(
             activity: Activity,
             imageView: ImageView,
@@ -50,7 +50,7 @@ class DetailActivity : BaseActivity() {
 
     private val binding by binding<ActivityDetailBinding>(R.layout.activity_detail)
     private val house by lazy { intent.getSerializableExtra(KEY_HOUSE) as HouseType }
-    private val viewModel: DetailViewModel by viewModel { parametersOf(house) }
+    private val viewModel by viewModels<DetailViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

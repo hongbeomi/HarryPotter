@@ -21,9 +21,10 @@ import android.os.Bundle
 import com.hongbeomi.harrypotter.R
 import com.hongbeomi.harrypotter.base.BaseActivity
 import com.hongbeomi.harrypotter.databinding.ActivityMainBinding
-import com.hongbeomi.harrypotter.ui.HouseType
 import com.hongbeomi.harrypotter.ui.detail.DetailActivity.Companion.startActivityWithTransition
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity() {
 
     private val binding: ActivityMainBinding by binding(R.layout.activity_main)

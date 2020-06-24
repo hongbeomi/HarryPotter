@@ -24,7 +24,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
     dataBinding {
         enabled = true
     }
@@ -41,7 +47,7 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:${versions.recyclerView}"
 
     // aac dependencies
-    implementation "androidx.lifecycle:lifecycle-viewmodel:${versions.lifecycle}"
+    implementation "androidx.fragment:fragment-ktx:${versions.fragment}"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}"
     implementation "androidx.lifecycle:lifecycle-extensions:${versions.lifecycle}"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}"
@@ -67,11 +73,12 @@ dependencies {
 
     // dagger
     implementation "com.google.dagger:dagger:${versions.dagger}"
+    implementation "com.google.dagger:hilt-android:${versions.daggerHiltAndroid}"
+    implementation "androidx.hilt:hilt-common:${versions.daggerHilt}"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:${versions.daggerHilt}"
     kapt "com.google.dagger:dagger-compiler:${versions.dagger}"
-
-    // dagger hilt
-    implementation "com.google.dagger:hilt-android:${versions.daggerHilt}"
-    kapt "com.google.dagger:hilt-android-compiler:${versions.daggerHilt}"
+    kapt "com.google.dagger:hilt-android-compiler:${versions.daggerHiltAndroid}"
+    kapt "androidx.hilt:hilt-compiler:${versions.daggerHilt}"
 
     // lottie
     implementation "com.airbnb.android:lottie:${versions.lottie}"

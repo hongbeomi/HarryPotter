@@ -18,8 +18,11 @@ package com.hongbeomi.harrypotter.data.remote
  **/
 
 import com.hongbeomi.harrypotter.data.service.HarryPotterService
+import javax.inject.Inject
 
-class RemoteDataSourceImpl(private val service: HarryPotterService) : RemoteDataSource {
+class RemoteDataSourceImpl @Inject constructor(
+    private val service: HarryPotterService
+) : RemoteDataSource {
 
     override suspend fun getCharacters(type: String) = service.getCharacters(type)
 
