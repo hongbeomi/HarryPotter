@@ -30,6 +30,7 @@ Go to ths [releases](https://github.com/hongbeomi/HarryPotter/releases/tag/v1.0.
   - Lifecycle - Create a UI that automatically responds to lifecycle events.
   - ViewModel - UI related data holder, Easily schedule asynchronous tasks for optimal execution.
 - [Koin](https://github.com/InsertKoinIO/koin) - dependency injection.
+- [Dagger-Hilt](https://dagger.dev/hilt/) - dependency injection.
 - [Retrofit2](https://github.com/square/retrofit) - REST APIs.
 - [OkHttp3](https://github.com/square/okhttp) - implementing interceptor, logging web server.
 - [Glide](https://github.com/bumptech/glide) - loading images.
@@ -38,6 +39,15 @@ Go to ths [releases](https://github.com/hongbeomi/HarryPotter/releases/tag/v1.0.
 - [Material-Dioalog](https://github.com/afollestad/material-dialogs) - material dialog.
 
 <br>
+
+## 🍴 Stable Samples 
+
+| Sample                                                       | Description                           |
+| ------------------------------------------------------------ | ------------------------------------- |
+| [master](https://github.com/hongbeomi/HarryPotter/tree/master) | Dependency injection with Koin        |
+| [dagger-hilt](https://github.com/hongbeomi/HarryPotter/tree/dagger-hilt) | Dependency injection with Dagger-Hilt |
+
+
 
 ## 💎 Architecture
 
