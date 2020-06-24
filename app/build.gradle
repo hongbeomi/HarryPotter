@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     compileSdkVersion 29
@@ -64,9 +65,13 @@ dependencies {
     // discrete scrollview
     implementation "com.yarolegovich:discrete-scrollview:${versions.discreteScrollview}"
 
-    // koin dependencies
-    implementation "org.koin:koin-android:${versions.koin}"
-    implementation "org.koin:koin-android-viewmodel:${versions.koin}"
+    // dagger
+    implementation "com.google.dagger:dagger:${versions.dagger}"
+    kapt "com.google.dagger:dagger-compiler:${versions.dagger}"
+
+    // dagger hilt
+    implementation "com.google.dagger:hilt-android:${versions.daggerHilt}"
+    kapt "com.google.dagger:hilt-android-compiler:${versions.daggerHilt}"
 
     // lottie
     implementation "com.airbnb.android:lottie:${versions.lottie}"
@@ -78,4 +83,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+}
+
+kapt {
+    correctErrorTypes true
 }
