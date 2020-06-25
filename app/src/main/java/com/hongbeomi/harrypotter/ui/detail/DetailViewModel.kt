@@ -34,12 +34,13 @@ class DetailViewModel @ViewModelInject constructor(
     private val houseName = savedStateHandle.get<HouseType>(KEY_HOUSE)?.name
 
     val characterList : LiveData<List<Character>> = liveData(Dispatchers.IO) {
-        loading.postValue(true)
+        isLoading.postValue(true)
         houseName?.let {
             emit(repository.getCharacters(it))
         }
+        isLoading.postValue(false)
     }
 
-    val loading = MutableLiveData<Boolean>()
+    val isLoading = MutableLiveData<Boolean>()
 
 }

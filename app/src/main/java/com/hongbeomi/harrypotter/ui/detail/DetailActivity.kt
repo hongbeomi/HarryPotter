@@ -59,9 +59,6 @@ class DetailActivity : BaseActivity() {
             lifecycleOwner = this@DetailActivity
             viewModel = this@DetailActivity.viewModel
         }
-        viewModel.characterList.observe(::getLifecycle) {
-            viewModel.loading.value = false
-        }
     }
 
 }
