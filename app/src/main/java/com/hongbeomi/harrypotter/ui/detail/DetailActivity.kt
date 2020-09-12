@@ -26,7 +26,6 @@ import com.hongbeomi.harrypotter.R
 import com.hongbeomi.harrypotter.base.BaseActivity
 import com.hongbeomi.harrypotter.databinding.ActivityDetailBinding
 import com.hongbeomi.harrypotter.ui.HouseType
-import com.hongbeomi.harrypotter.ui.SpaceItemDecoration
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
