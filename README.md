@@ -31,6 +31,7 @@ Go to ths [releases](https://github.com/hongbeomi/HarryPotter/releases/tag/v1.0.
   - ViewModel - UI related data holder, Easily schedule asynchronous tasks for optimal execution.
 - [Koin](https://github.com/InsertKoinIO/koin) - dependency injection.
 - [Dagger-Hilt](https://dagger.dev/hilt/) - dependency injection.
+- [App-StartUp](https://developer.android.com/topic/libraries/app-startup) - Initializing the app when it starts
 - [Retrofit2](https://github.com/square/retrofit) - REST APIs.
 - [OkHttp3](https://github.com/square/okhttp) - implementing interceptor, logging web server.
 - [Glide](https://github.com/bumptech/glide) - loading images.
@@ -46,6 +47,7 @@ Go to ths [releases](https://github.com/hongbeomi/HarryPotter/releases/tag/v1.0.
 | ------------------------------------------------------------ | ------------------------------------- |
 | [master](https://github.com/hongbeomi/HarryPotter/tree/master) | Dependency injection with Koin        |
 | [dagger-hilt](https://github.com/hongbeomi/HarryPotter/tree/dagger-hilt) | Dependency injection with Dagger-Hilt |
+| [app-startUp](https://github.com/hongbeomi/HarryPotter/tree/app-startup) | Initializing the app when it starts   |
 
 
 
