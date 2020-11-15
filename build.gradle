@@ -21,6 +21,7 @@ buildscript {
             'okhttp'                : '4.4.0',
             'recyclerView'          : '1.2.0-alpha02',
             'retrofit'              : '2.6.0',
+            'startUp'               : '1.0.0'
     ]
     dependencies {
         classpath 'com.android.tools.build:gradle:4.1.0'
