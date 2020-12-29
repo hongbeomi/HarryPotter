@@ -21,6 +21,14 @@ Go to ths [releases](https://github.com/hongbeomi/HarryPotter/releases/tag/v1.0.
 
 <br>
 
+## 🚀 Mad Scorecard
+
+<img src="https://github.com/hongbeomi/HarryPotter/blob/master/mad_scorecard/summary.png"></img>
+
+<img src="https://github.com/hongbeomi/HarryPotter/blob/master/mad_scorecard/kotlin.png"></img>
+
+<br>
+
 ## 💡 Stack & Libraries
 
 - Minimum SDK level 21
@@ -56,14 +64,6 @@ Go to ths [releases](https://github.com/hongbeomi/HarryPotter/releases/tag/v1.0.
 Harry Potter does not use a Local database.
 
 ![architecture](https://github.com/hongbeomi/HarryPotter/blob/master/preview/mvvm.png)
-
-<br>
-
-## 🚀 Mad Scorecard
-
-<img src="https://github.com/hongbeomi/HarryPotter/blob/master/mad_scorecard/summary.png"></img>
-
-<img src="https://github.com/hongbeomi/HarryPotter/blob/master/mad_scorecard/kotlin.png"></img>
 
 <br>
 
