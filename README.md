@@ -59,6 +59,14 @@ Harry Potter does not use a Local database.
 
 <br>
 
+## 🚀 Mad Scorecard
+
+<img src="https://github.com/hongbeomi/HarryPotter/blob/master/mad_scorecard/summary.png"></img>
+
+<img src="https://github.com/hongbeomi/HarryPotter/blob/master/mad_scorecard/kotlin.png"></img>
+
+<br>
+
 ## 🌟 Find this project useful?
 
 Support it by joining [stargazers](https://github.com/hongbeomi/HarryPotter/stargazers) for this repository
