@@ -52,11 +52,20 @@ class MainAdapter(val action: (ImageView, HouseType) -> Unit) :
 
     inner class MainViewHolder(private val binding: ItemHouseBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.root.setOnClickListener {
+                action(
+                    binding.imageViewItemHouseLogo,
+                    items[bindingAdapterPosition]
+                )
+            }
+        }
+
         fun bind(item: HouseType) {
             binding.apply {
                 house = item
                 executePendingBindings()
-                root.setOnClickListener { action(binding.imageViewItemHouseLogo, item) }
             }
         }
     }
