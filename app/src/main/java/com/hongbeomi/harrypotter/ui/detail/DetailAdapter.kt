@@ -50,26 +50,30 @@ class DetailAdapter : RecyclerView.Adapter<DetailAdapter.DetailViewHolder>() {
 
     inner class DetailViewHolder(private val binding: ItemCharacterBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: Character) {
-            binding.apply {
-                character = item
-                executePendingBindings()
-                root.setOnClickListener {
-                    MaterialDialog(root.context).show {
-                        customView(
+
+        init {
+            binding.root.setOnClickListener {
+                MaterialDialog(binding.root.context).show {
+                    customView(
                             view = DataBindingUtil.inflate<DialogDetailBinding>(
-                                LayoutInflater.from(root.context),
-                                R.layout.dialog_detail,
-                                null,
-                                false
+                                    LayoutInflater.from(binding.root.context),
+                                    R.layout.dialog_detail,
+                                    null,
+                                    false
                             ).also {
                                 it.character = binding.character
                                 it.imageViewDialogDetailPhoto.clipToOutline = true
                             }.root
-                        )
-                        cornerRadius(root.context.resources.getDimension(R.dimen.dp_8))
-                    }
+                    )
+                    cornerRadius(binding.root.context.resources.getDimension(R.dimen.dp_8))
                 }
+            }
+        }
+
+        fun bind(item: Character) {
+            binding.apply {
+                character = item
+                executePendingBindings()
             }
         }
 
