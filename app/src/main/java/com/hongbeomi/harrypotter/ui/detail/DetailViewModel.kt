@@ -17,17 +17,18 @@ package com.hongbeomi.harrypotter.ui.detail
  *
  **/
 
-import androidx.hilt.Assisted
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.hongbeomi.harrypotter.data.repository.Repository
 import com.hongbeomi.harrypotter.model.Character
 import com.hongbeomi.harrypotter.ui.HouseType
 import com.hongbeomi.harrypotter.ui.detail.DetailActivity.Companion.KEY_HOUSE
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import javax.inject.Inject
 
-class DetailViewModel @ViewModelInject constructor(
-    @Assisted private val savedStateHandle: SavedStateHandle,
+@HiltViewModel
+class DetailViewModel @Inject constructor(
+    private val savedStateHandle: SavedStateHandle,
     private val repository: Repository
 ) : ViewModel() {
 

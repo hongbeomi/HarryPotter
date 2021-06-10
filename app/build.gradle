@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 
@@ -73,13 +73,8 @@ dependencies {
     implementation "com.yarolegovich:discrete-scrollview:${versions.discreteScrollview}"
 
     // dagger
-    implementation "com.google.dagger:dagger:${versions.dagger}"
-    implementation "com.google.dagger:hilt-android:${versions.daggerHiltAndroid}"
-    implementation "androidx.hilt:hilt-common:${versions.daggerHilt}"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:${versions.daggerHilt}"
-    kapt "com.google.dagger:dagger-compiler:${versions.dagger}"
-    kapt "com.google.dagger:hilt-android-compiler:${versions.daggerHiltAndroid}"
-    kapt "androidx.hilt:hilt-compiler:${versions.daggerHilt}"
+    implementation "com.google.dagger:hilt-android:${versions.daggerHilt}"
+    kapt "com.google.dagger:hilt-android-compiler:${versions.daggerHilt}"
 
     // lottie
     implementation "com.airbnb.android:lottie:${versions.lottie}"

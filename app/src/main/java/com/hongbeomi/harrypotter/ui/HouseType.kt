@@ -20,7 +20,6 @@ package com.hongbeomi.harrypotter.ui
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import com.hongbeomi.harrypotter.R
-import dagger.Provides
 
 enum class HouseType(@DrawableRes val logo: Int, @ColorRes val color: Int) {
     Gryffindor(R.drawable.logo_gryffindor, R.color.red900dark),
