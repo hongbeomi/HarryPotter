@@ -8,6 +8,8 @@ buildscript {
     }
     ext.versions = [
             'archLifecycle'         : '2.2.0',
+            'activityVersion'       : '1.3.0-beta01',
+            'appcompanist'          : '0.11.0',
             'card'                  : '1.0.0',
             'coroutines'            : '1.3.2',
             'constraintLayout'      : '2.0.0-beta4',
