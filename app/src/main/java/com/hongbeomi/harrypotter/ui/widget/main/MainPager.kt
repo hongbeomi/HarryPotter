@@ -68,6 +68,7 @@ fun MainPager(
                 modifier = Modifier.size(320.dp),
                 contentScale = ContentScale.Fit
             )
+            Spacer(modifier = Modifier.height(16.dp))
             Text(
                 text = name,
                 fontSize = 24.sp,

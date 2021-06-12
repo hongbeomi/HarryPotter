@@ -143,14 +143,13 @@ fun PreviewCharacterDialogContent() {
     CharacterDialogContent(
         character = Character(
             name = "potter",
-            species = "harry potter",
+            species = "human",
             gender = "man",
             house = "house",
-            dateOfBirth = "123",
-            yearOfBirth = "123",
-            ancestry = "test",
+            yearOfBirth = "2021",
+            ancestry = "muggle",
             patronus = "dog",
-            actor = "name",
+            actor = "potter",
             alive = true,
             image = "http://hp-api.herokuapp.com/images/harry.jpg"
         )

@@ -26,7 +26,6 @@ data class Character(
     val species: String,
     val gender: String,
     val house: String,
-    val dateOfBirth: String,
     val yearOfBirth: String,
     val ancestry: String,
     val patronus: String,
@@ -39,7 +38,6 @@ data class Character(
         return "${::species.name} : $species\n" +
                 "${::gender.name} : $gender\n" +
                 "${::house.name} : $house\n" +
-                "${::dateOfBirth.name} : $dateOfBirth\n" +
                 "${::yearOfBirth.name} : $yearOfBirth\n" +
                 "${::ancestry.name} : $ancestry\n" +
                 "${::patronus.name} : ${if(patronus.isBlank()) "X" else patronus}\n" +
