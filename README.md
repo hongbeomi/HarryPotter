@@ -21,6 +21,12 @@ Go to ths [releases](https://github.com/hongbeomi/HarryPotter/releases/tag/v1.0.
 
 <br>
 
+## 🙌 Jetpack Compose
+
+**[Check out the version migrated to Compose!](https://github.com/hongbeomi/HarryPotter/tree/compose)**
+
+<br>
+
 ## 💡 Stack & Libraries
 
 - Minimum SDK level 21
@@ -29,9 +35,11 @@ Go to ths [releases](https://github.com/hongbeomi/HarryPotter/releases/tag/v1.0.
   - LiveData -observable data holder class.
   - Lifecycle - Create a UI that automatically responds to lifecycle events.
   - ViewModel - UI related data holder, Easily schedule asynchronous tasks for optimal execution.
+  - [Compose](https://developer.android.com/jetpack/compose) - Modern toolkit for building native UI
 - [Koin](https://github.com/InsertKoinIO/koin) - dependency injection.
 - [Dagger-Hilt](https://dagger.dev/hilt/) - dependency injection.
 - [App-StartUp](https://developer.android.com/topic/libraries/app-startup) - Initializing the app when it starts
+- [Accompanist](https://github.com/google/accompanist) - A collection of extension libraries for Jetpack Compose
 - [Retrofit2](https://github.com/square/retrofit) - REST APIs.
 - [OkHttp3](https://github.com/square/okhttp) - implementing interceptor, logging web server.
 - [Glide](https://github.com/bumptech/glide) - loading images.
@@ -56,6 +64,7 @@ Go to ths [releases](https://github.com/hongbeomi/HarryPotter/releases/tag/v1.0.
 | [master](https://github.com/hongbeomi/HarryPotter/tree/master) | Dependency injection with Koin        |
 | [dagger-hilt](https://github.com/hongbeomi/HarryPotter/tree/dagger-hilt) | Dependency injection with Dagger-Hilt |
 | [app-startUp](https://github.com/hongbeomi/HarryPotter/tree/app-startup) | Initializing the app when it starts   |
+| [compose](https://github.com/hongbeomi/HarryPotter/tree/compose) | Modern toolkit for building native UI |
 
 
 
