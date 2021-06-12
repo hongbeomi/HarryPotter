@@ -62,15 +62,18 @@ dependencies {
     implementation "androidx.compose.runtime:runtime:${versions.compose}"
     implementation "androidx.compose.runtime:runtime-livedata:${versions.compose}"
     implementation "androidx.activity:activity-compose:${versions.activityVersion}"
+    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.0-alpha07"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha06"
 
     // appcompanist
     implementation "com.google.accompanist:accompanist-insets:${versions.appcompanist}"
     implementation "com.google.accompanist:accompanist-pager:${versions.appcompanist}"
+    implementation "com.google.accompanist:accompanist-coil:${versions.appcompanist}"
 
     // aac dependencies
     implementation "androidx.fragment:fragment-ktx:${versions.fragment}"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}"
-    implementation "androidx.lifecycle:lifecycle-extensions:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:${versions.lifecycle}"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}"
     kapt "androidx.lifecycle:lifecycle-compiler:${versions.archLifecycle}"
 

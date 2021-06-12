@@ -11,9 +11,38 @@
         <entry key="../../../../layout/compose-model-1623395106046.xml" value="0.20861486486486486" />
         <entry key="../../../../layout/compose-model-1623398732007.xml" value="0.3146114864864865" />
         <entry key="../../../../layout/compose-model-1623399123243.xml" value="0.3146114864864865" />
+        <entry key="../../../../layout/compose-model-1623411319951.xml" value="0.3657094594594595" />
+        <entry key="../../../../layout/compose-model-1623411536230.xml" value="0.3657094594594595" />
+        <entry key="../../../../layout/compose-model-1623411843001.xml" value="0.3657094594594595" />
+        <entry key="../../../../layout/compose-model-1623412258382.xml" value="0.3657094594594595" />
+        <entry key="../../../../layout/compose-model-1623415402114.xml" value="0.1" />
+        <entry key="../../../../layout/compose-model-1623477300915.xml" value="0.375" />
+        <entry key="../../../../layout/compose-model-1623489207854.xml" value="0.375" />
+        <entry key="../../../../layout/compose-model-1623492514743.xml" value="0.3657094594594595" />
+        <entry key="../../../../layout/compose-model-1623492808347.xml" value="0.4398148148148148" />
+        <entry key="../../../../layout/compose-model-1623494621759.xml" value="0.4398148148148148" />
+        <entry key="../../../../layout/compose-model-1623494660541.xml" value="0.45" />
+        <entry key="../../../../layout/compose-model-1623497068456.xml" value="0.3657094594594595" />
+        <entry key="../../../../layout/compose-model-1623501540586.xml" value="0.3657094594594595" />
+        <entry key="../../../../layout/compose-model-1623501541491.xml" value="0.3657094594594595" />
+        <entry key="../../../../layout/compose-model-1623501871501.xml" value="0.1" />
+        <entry key="../../../../layout/compose-model-1623501911984.xml" value="0.3657094594594595" />
+        <entry key="../../../../layout/compose-model-1623501913246.xml" value="0.3657094594594595" />
+        <entry key="../../../../layout/compose-model-1623501920242.xml" value="0.4398148148148148" />
+        <entry key="../../../../layout/compose-model-1623502945203.xml" value="0.4398148148148148" />
+        <entry key="../../../../layout/compose-model-1623502966463.xml" value="0.3657094594594595" />
+        <entry key="../../../../layout/compose-model-1623502968823.xml" value="0.3657094594594595" />
+        <entry key="../../../../layout/custom_preview.xml" value="0.4395833333333333" />
+        <entry key="app/src/main/res/drawable/bg_character_text.xml" value="0.4338461538461538" />
+        <entry key="app/src/main/res/drawable/bg_dialog_photo.xml" value="0.4338461538461538" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.4338461538461538" />
         <entry key="app/src/main/res/layout/activity_detail.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/dialog_detail.xml" value="0.22644927536231885" />
+        <entry key="app/src/main/res/layout/item_character.xml" value="0.22644927536231885" />
         <entry key="app/src/main/res/layout/item_house.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_harry_potter.xml" value="0.4338461538461538" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_harry_potter_round.xml" value="0.4338461538461538" />
       </map>
     </option>
   </component>

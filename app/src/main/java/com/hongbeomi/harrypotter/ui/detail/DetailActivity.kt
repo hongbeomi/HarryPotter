@@ -17,16 +17,13 @@ package com.hongbeomi.harrypotter.ui.detail
  *
  **/
 
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageView
-import androidx.activity.viewModels
-import androidx.core.app.ActivityOptionsCompat
-import com.hongbeomi.harrypotter.R
+import androidx.activity.compose.setContent
+import androidx.compose.animation.*
+import androidx.compose.foundation.ExperimentalFoundationApi
 import com.hongbeomi.harrypotter.base.BaseActivity
-import com.hongbeomi.harrypotter.databinding.ActivityDetailBinding
 import com.hongbeomi.harrypotter.ui.HouseType
+import com.hongbeomi.harrypotter.ui.widget.detail.DetailScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -34,30 +31,16 @@ class DetailActivity : BaseActivity() {
 
     companion object {
         const val KEY_HOUSE = "house"
-        fun startActivityWithTransition(
-            activity: Activity,
-            imageView: ImageView,
-            type: HouseType
-        ) {
-            val intent = Intent(activity, DetailActivity::class.java)
-            intent.putExtra(KEY_HOUSE, type)
-            val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
-                activity, imageView, imageView.transitionName
-            )
-            activity.startActivity(intent, options.toBundle())
-        }
     }
 
-    private val binding by binding<ActivityDetailBinding>(R.layout.activity_detail)
     private val house by lazy { intent.getSerializableExtra(KEY_HOUSE) as HouseType }
-    private val viewModel by viewModels<DetailViewModel>()
 
+    @ExperimentalAnimationApi
+    @ExperimentalFoundationApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.apply {
-            house = this@DetailActivity.house
-            lifecycleOwner = this@DetailActivity
-            viewModel = this@DetailActivity.viewModel
+        setContent {
+            DetailScreen(house)
         }
     }
 

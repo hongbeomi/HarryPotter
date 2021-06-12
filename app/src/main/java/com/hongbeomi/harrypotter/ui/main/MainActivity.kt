@@ -17,24 +17,26 @@ package com.hongbeomi.harrypotter.ui.main
  *
  **/
 
+import android.content.Intent
 import android.os.Bundle
-import com.hongbeomi.harrypotter.R
+import androidx.activity.compose.setContent
+import com.google.accompanist.pager.ExperimentalPagerApi
 import com.hongbeomi.harrypotter.base.BaseActivity
-import com.hongbeomi.harrypotter.databinding.ActivityMainBinding
-import com.hongbeomi.harrypotter.ui.detail.DetailActivity.Companion.startActivityWithTransition
+import com.hongbeomi.harrypotter.ui.detail.DetailActivity
+import com.hongbeomi.harrypotter.ui.widget.main.MainScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity() {
 
-    private val binding: ActivityMainBinding by binding(R.layout.activity_main)
-
+    @ExperimentalPagerApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.apply {
-            lifecycleOwner = this@MainActivity
-            adapter = MainAdapter { view, type ->
-                startActivityWithTransition(this@MainActivity, view, type)
+        setContent {
+            MainScreen { type ->
+                val intent = Intent(this, DetailActivity::class.java)
+                intent.putExtra(DetailActivity.KEY_HOUSE, type)
+                startActivity(intent)
             }
         }
     }

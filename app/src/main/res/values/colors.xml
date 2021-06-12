@@ -4,9 +4,13 @@
     <color name="colorPrimaryDark">#770609</color>
     <color name="colorAccent">#99181B</color>
     <color name="background">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="transparent">#00000000</color>
 
     <color name="red900dark">#7f0000</color>
     <color name="blue900dark">#002171</color>
     <color name="green900dark">#003d00</color>
     <color name="yellowA700dark">#c7a500</color>
+
+    <color name="mainBackground">#004505</color>
 </resources>

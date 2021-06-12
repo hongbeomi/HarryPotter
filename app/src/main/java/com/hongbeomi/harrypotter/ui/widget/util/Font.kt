@@ -1,4 +1,9 @@
-package com.hongbeomi.harrypotter
+package com.hongbeomi.harrypotter.ui.widget.util
+
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import com.hongbeomi.harrypotter.R
 
 /**
  * Copyright 2020 Hongbeom Ahn
@@ -17,8 +22,10 @@ package com.hongbeomi.harrypotter
  *
  **/
 
-import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
-
-@HiltAndroidApp
-class HarryPotterApp : Application()
+val harryPotterFont = FontFamily(
+    listOf(
+        Font(R.font.harry_potter, FontWeight.Medium),
+        Font(R.font.sans_narrow_regular, FontWeight.Light),
+        Font(R.font.girassol_regular, FontWeight.Bold)
+    )
+)

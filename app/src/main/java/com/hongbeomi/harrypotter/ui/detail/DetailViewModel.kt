@@ -23,25 +23,43 @@ import com.hongbeomi.harrypotter.model.Character
 import com.hongbeomi.harrypotter.ui.HouseType
 import com.hongbeomi.harrypotter.ui.detail.DetailActivity.Companion.KEY_HOUSE
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.SharingStarted.Companion.WhileSubscribed
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class DetailViewModel @Inject constructor(
-    private val savedStateHandle: SavedStateHandle,
+    savedStateHandle: SavedStateHandle,
     private val repository: Repository
 ) : ViewModel() {
 
     private val houseName = savedStateHandle.get<HouseType>(KEY_HOUSE)?.name
 
-    val characterList : LiveData<List<Character>> = liveData(Dispatchers.IO) {
-        isLoading.postValue(true)
+    private val _isLoadingFlow = MutableStateFlow(false)
+    val isLoadingFlow: StateFlow<Boolean> = _isLoadingFlow.asStateFlow()
+
+    private val _characterDialog = MutableSharedFlow<Character?>()
+    val characterDialog: SharedFlow<Character?> = _characterDialog.asSharedFlow()
+
+    val characterListFlow: StateFlow<List<Character>> = flow {
         houseName?.let {
+            _isLoadingFlow.emit(true)
             emit(repository.getCharacters(it))
         }
-        isLoading.postValue(false)
+        _isLoadingFlow.emit(false)
+    }.stateIn(
+        scope = viewModelScope,
+        started = WhileSubscribed(5000),
+        initialValue = emptyList()
+    )
+
+    fun showCharacterDialogEvent(character: Character) = viewModelScope.launch {
+        _characterDialog.emit(character)
     }
 
-    val isLoading = MutableLiveData<Boolean>()
+    fun hideCharacterDialogEvent() = viewModelScope.launch {
+        _characterDialog.emit(null)
+    }
 
 }

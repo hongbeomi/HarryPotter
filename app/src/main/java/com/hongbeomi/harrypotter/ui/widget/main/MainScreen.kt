@@ -9,21 +9,35 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.airbnb.lottie.compose.LottieAnimation
-import com.airbnb.lottie.compose.LottieAnimationSpec
-import com.airbnb.lottie.compose.rememberLottieAnimationState
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.hongbeomi.harrypotter.R
 import com.hongbeomi.harrypotter.ui.HouseType
+import com.hongbeomi.harrypotter.ui.widget.lottie.LoopLottieAnimation
+
+/**
+ * Copyright 2020 Hongbeom Ahn
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ **/
 
 @ExperimentalPagerApi
 @Composable
-fun MainScreen() {
-    val animationSpec = remember { LottieAnimationSpec.RawRes(R.raw.lightning) }
-    val animationState = rememberLottieAnimationState(autoPlay = true, repeatCount = Int.MAX_VALUE)
+fun MainScreen(onItemSelected: (HouseType) -> Unit) {
     val itemList = remember {
         listOf(
             HouseType.Gryffindor,
@@ -34,13 +48,11 @@ fun MainScreen() {
     }
     Box(
         modifier = Modifier
-            .background(Color.Black)
+            .background(colorResource(id = R.color.background))
             .fillMaxSize()
     ) {
-        LottieAnimation(
-            spec = animationSpec,
-            animationState = animationState
-        )
+        LoopLottieAnimation(rawId = R.raw.lightning)
+
         Column(Modifier.fillMaxSize()) {
             Spacer(modifier = Modifier.height(128.dp))
             Image(
@@ -55,18 +67,18 @@ fun MainScreen() {
             Spacer(modifier = Modifier.height(24.dp))
             MainPager(
                 list = itemList,
-                onItemSelected = {
-                    // TODO: 2021/06/11 go to detail
-                },
-                modifier = Modifier.fillMaxSize().padding(horizontal = 16.dp)
+                onItemSelected = onItemSelected,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(horizontal = 16.dp)
             )
         }
     }
 }
 
 @ExperimentalPagerApi
-@Preview
+@Preview("main screen")
 @Composable
 fun PreviewMainScreen() {
-    MainScreen()
+    MainScreen { }
 }

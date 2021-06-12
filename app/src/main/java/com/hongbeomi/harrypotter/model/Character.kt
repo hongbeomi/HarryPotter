@@ -18,7 +18,7 @@ package com.hongbeomi.harrypotter.model
  **/
 
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Character(
@@ -33,4 +33,18 @@ data class Character(
     val actor: String,
     val alive: Boolean,
     val image: String
-) : Parcelable
+) : Parcelable {
+
+    fun getInfoText(): String {
+        return "${::species.name} : $species\n" +
+                "${::gender.name} : $gender\n" +
+                "${::house.name} : $house\n" +
+                "${::dateOfBirth.name} : $dateOfBirth\n" +
+                "${::yearOfBirth.name} : $yearOfBirth\n" +
+                "${::ancestry.name} : $ancestry\n" +
+                "${::patronus.name} : ${if(patronus.isBlank()) "X" else patronus}\n" +
+                "${::actor.name} : $actor\n" +
+                "${::alive.name} : $alive"
+    }
+
+}
