@@ -37,6 +37,7 @@ import com.google.accompanist.coil.rememberCoilPainter
 import com.hongbeomi.harrypotter.R
 import com.hongbeomi.harrypotter.model.Character
 import com.hongbeomi.harrypotter.ui.widget.util.EnterAlphaAnimation
+import com.hongbeomi.harrypotter.util.getLifecycleAwareState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.emptyFlow
 
@@ -65,11 +66,7 @@ fun CharacterList(
     modifier: Modifier = Modifier,
     onClickItem: (Character) -> Unit = {}
 ) {
-    val lifecycleOwner = LocalLifecycleOwner.current
-    val characterFlowLifecycleAware = remember(characterFlow, lifecycleOwner) {
-        characterFlow.flowWithLifecycle(lifecycleOwner.lifecycle, Lifecycle.State.STARTED)
-    }
-    val characterList by characterFlowLifecycleAware.collectAsState(initial = listOf())
+    val characterList by getLifecycleAwareState(flow = characterFlow, initialValue = listOf())
 
     LazyVerticalGrid(
         cells = GridCells.Fixed(3),
