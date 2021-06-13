@@ -7,7 +7,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.ScaleFactor
+import androidx.compose.ui.layout.lerp
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -16,10 +19,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
+import com.google.accompanist.pager.calculateCurrentOffsetForPage
 import com.google.accompanist.pager.rememberPagerState
 import com.hongbeomi.harrypotter.R
 import com.hongbeomi.harrypotter.ui.HouseType
 import com.hongbeomi.harrypotter.ui.widget.util.harryPotterFont
+import kotlin.math.absoluteValue
 
 /**
  * Copyright 2020 Hongbeom Ahn
@@ -58,7 +63,24 @@ fun MainPager(
             Modifier.clickable(
                 true,
                 onClick = { onItemSelected.invoke(list[page]) }
-            ),
+            ).graphicsLayer {
+                val pageOffset = calculateCurrentOffsetForPage(page).absoluteValue
+
+                lerp(
+                    start = ScaleFactor(0.55f, 0.55f),
+                    stop = ScaleFactor(1f, 1f),
+                    fraction = 1f - pageOffset.coerceIn(0f, 1f)
+                ).also { scale ->
+                    scaleX = scale.scaleX
+                    scaleY = scale.scaleY
+                }
+
+                alpha = lerp(
+                    start = ScaleFactor(0.5f, 0.5f),
+                    stop = ScaleFactor(1f, 1f),
+                    fraction = 1f - pageOffset.coerceIn(0f, 1f)
+                ).scaleX
+            },
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Spacer(modifier = Modifier.height(16.dp))
