@@ -39,8 +39,8 @@ class DetailViewModel @Inject constructor(
     private val _isLoadingFlow = MutableStateFlow(false)
     val isLoadingFlow: StateFlow<Boolean> = _isLoadingFlow.asStateFlow()
 
-    private val _characterDialog = MutableSharedFlow<Character?>()
-    val characterDialog: SharedFlow<Character?> = _characterDialog.asSharedFlow()
+    private val _selectedCharacter = MutableSharedFlow<Character?>()
+    val selectedCharacter: SharedFlow<Character?> = _selectedCharacter.asSharedFlow()
 
     val characterListFlow: StateFlow<List<Character>> = flow {
         houseName?.let {
@@ -55,11 +55,11 @@ class DetailViewModel @Inject constructor(
     )
 
     fun showCharacterDialogEvent(character: Character) = viewModelScope.launch {
-        _characterDialog.emit(character)
+        _selectedCharacter.emit(character)
     }
 
     fun hideCharacterDialogEvent() = viewModelScope.launch {
-        _characterDialog.emit(null)
+        _selectedCharacter.emit(null)
     }
 
 }

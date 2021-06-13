@@ -58,7 +58,6 @@ import kotlinx.coroutines.flow.emptyFlow
  *
  **/
 
-@ExperimentalAnimationApi
 @ExperimentalFoundationApi
 @Composable
 fun CharacterList(
@@ -82,7 +81,6 @@ fun CharacterList(
     }
 }
 
-@ExperimentalAnimationApi
 @Composable
 fun CharacterItem(
     character: Character,
