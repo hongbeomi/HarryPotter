@@ -51,6 +51,7 @@ class DetailActivity : BaseActivity() {
     private val binding by binding<ActivityDetailBinding>(R.layout.activity_detail)
     private val house by lazy { intent.getSerializableExtra(KEY_HOUSE) as HouseType }
     private val viewModel by viewModels<DetailViewModel>()
+    private val adapter = DetailAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,6 +59,11 @@ class DetailActivity : BaseActivity() {
             house = this@DetailActivity.house
             lifecycleOwner = this@DetailActivity
             viewModel = this@DetailActivity.viewModel
+            recyclerViewDetail.adapter = adapter
+        }
+
+        viewModel.characterList.observe(this) {
+            adapter.submitList(it)
         }
     }
 
