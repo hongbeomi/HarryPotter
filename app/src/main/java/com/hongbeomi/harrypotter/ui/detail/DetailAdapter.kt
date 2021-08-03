@@ -20,6 +20,8 @@ package com.hongbeomi.harrypotter.ui.detail
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
@@ -28,9 +30,7 @@ import com.hongbeomi.harrypotter.databinding.DialogDetailBinding
 import com.hongbeomi.harrypotter.databinding.ItemCharacterBinding
 import com.hongbeomi.harrypotter.model.Character
 
-class DetailAdapter : RecyclerView.Adapter<DetailAdapter.DetailViewHolder>() {
-
-    var itemList = listOf<Character>()
+class DetailAdapter : ListAdapter<Character, DetailAdapter.DetailViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         DataBindingUtil.inflate<ItemCharacterBinding>(
@@ -43,10 +43,8 @@ class DetailAdapter : RecyclerView.Adapter<DetailAdapter.DetailViewHolder>() {
             DetailViewHolder(it)
         }
 
-    override fun getItemCount() = itemList.size
-
     override fun onBindViewHolder(holder: DetailViewHolder, position: Int) =
-        holder.bind(itemList[position])
+        holder.bind(getItem(position))
 
     inner class DetailViewHolder(private val binding: ItemCharacterBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -76,7 +74,18 @@ class DetailAdapter : RecyclerView.Adapter<DetailAdapter.DetailViewHolder>() {
                 executePendingBindings()
             }
         }
+    }
 
+    companion object {
+        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Character>() {
+            override fun areItemsTheSame(oldItem: Character, newItem: Character): Boolean {
+                return oldItem.name == newItem.name
+            }
+
+            override fun areContentsTheSame(oldItem: Character, newItem: Character): Boolean {
+                return oldItem == newItem
+            }
+        }
     }
 
 }

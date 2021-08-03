@@ -45,14 +45,6 @@ fun setAdapter(view: RecyclerView, baseAdapter: RecyclerView.Adapter<*>) {
     view.adapter = baseAdapter
 }
 
-@BindingAdapter("bind:items")
-fun setItems(view: RecyclerView, items: List<Character>?) {
-    view.adapter = DetailAdapter().apply {
-        itemList = items ?: emptyList()
-        notifyDataSetChanged()
-    }
-}
-
 @BindingAdapter("bind:itemDeco")
 fun setDecoration(view: RecyclerView, space: Float) {
     view.addItemDecoration(SpaceItemDecoration(space.toInt(), 3))
