@@ -17,6 +17,7 @@ package com.hongbeomi.harrypotter.extension
  *
  **/
 
+import android.view.View
 import android.widget.ImageView
 import androidx.annotation.DimenRes
 import androidx.databinding.BindingAdapter
@@ -36,7 +37,7 @@ fun setImageViewResource(view: ImageView, resId: Int) {
 }
 
 @BindingAdapter("bind:background")
-fun setBackgroundColor(view: RecyclerView, colorId: Int) {
+fun setBackgroundColor(view: View, colorId: Int) {
     view.setBackgroundColor(view.context.resources.getColor(colorId))
 }
 
