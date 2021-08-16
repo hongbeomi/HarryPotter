@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HarryPotter</string>
+    <string name="transition_name">house</string>
+    <string name="title_data">Data</string>
+    <string name="title_buildsrc">Module Title</string>
+    <string name="title_features">Features</string>
+    <string name="title_core_ui">Core-ui</string>
+    <string name="title_detail">Detail</string>
+</resources>

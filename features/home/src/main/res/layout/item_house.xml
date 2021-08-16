@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="house"
+            type="github.hongbeomi.core_ui.HouseType" />
+    </data>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView_item_house_logo"
+                android:layout_width="320dp"
+                android:layout_height="320dp"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="16dp"
+                bind:src="@{house.logo}"
+                android:transitionName="@string/transition_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/logo_gryffindor"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:fontFamily="@font/harry_potter"
+                android:layout_marginBottom="16dp"
+                android:text="@{house.name()}"
+                tools:text="Gryffindor"
+                app:layout_constraintTop_toBottomOf="@id/imageView_item_house_logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
