@@ -59,12 +59,13 @@ Go to ths [releases](https://github.com/hongbeomi/HarryPotter/releases/tag/v1.0.
 
 ## 🍴 Stable Samples 
 
-| Sample                                                       | Description                           |
-| ------------------------------------------------------------ | ------------------------------------- |
-| [master](https://github.com/hongbeomi/HarryPotter/tree/master) | Dependency injection with Koin        |
-| [dagger-hilt](https://github.com/hongbeomi/HarryPotter/tree/dagger-hilt) | Dependency injection with Dagger-Hilt |
-| [app-startUp](https://github.com/hongbeomi/HarryPotter/tree/app-startup) | Initializing the app when it starts   |
-| [compose](https://github.com/hongbeomi/HarryPotter/tree/compose) | Modern toolkit for building native UI |
+| Sample                                                       | Description                                 |
+| ------------------------------------------------------------ | ------------------------------------------- |
+| [master](https://github.com/hongbeomi/HarryPotter/tree/master) | Dependency injection with Koin              |
+| [dagger-hilt](https://github.com/hongbeomi/HarryPotter/tree/dagger-hilt) | Dependency injection with Dagger-Hilt       |
+| [app-startUp](https://github.com/hongbeomi/HarryPotter/tree/app-startup) | Initializing the app when it starts         |
+| [compose](https://github.com/hongbeomi/HarryPotter/tree/compose) | Modern toolkit for building native UI       |
+| [MVI](https://github.com/hongbeomi/HarryPotter/tree/mvi)     | MVI(Model-View-Intent) architecture pattern |
 
 
 
