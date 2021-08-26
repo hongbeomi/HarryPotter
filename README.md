@@ -76,6 +76,12 @@ Harry Potter does not use a Local database.
 
 <br>
 
+## ✨ API
+
+- https://hp-api.herokuapp.com/
+
+<br>
+
 ## 🌟 Find this project useful?
 
 Support it by joining [stargazers](https://github.com/hongbeomi/HarryPotter/stargazers) for this repository
