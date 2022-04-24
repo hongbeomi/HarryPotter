@@ -61,6 +61,7 @@ class MainAdapter(
         fun bind(item: HouseType) {
             with(binding) {
                 house = item
+                imageViewItemHouseLogo.setImageResource(item.logo)
                 executePendingBindings()
             }
         }

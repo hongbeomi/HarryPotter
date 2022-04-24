@@ -9,7 +9,7 @@
             name="house"
             type="com.hongbeomi.harrypotter.ui.HouseType" />
         <variable
-            name="viewModel"
+            name="vm"
             type="com.hongbeomi.harrypotter.ui.detail.DetailViewModel" />
         <import type="android.view.View"/>
     </data>
@@ -34,6 +34,7 @@
                 app:title="@{house.name()}">
 
                 <ImageView
+                    android:id="@+id/imageView_detail"
                     android:layout_gravity="end"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -41,7 +42,6 @@
                     android:transitionName="@string/transition_name"
                     android:scaleType="fitEnd"
                     app:layout_collapseMode="parallax"
-                    bind:src="@{house.logo}"
                     tools:src="@drawable/logo_gryffindor"/>
 
                 <androidx.appcompat.widget.Toolbar
@@ -65,8 +65,6 @@
             android:paddingTop="@dimen/dp_2"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="3"
-            bind:itemDeco="@{@dimen/dp_2}"
-            bind:background="@{house.color}"
             tools:listitem="@layout/item_character"/>
 
         <com.airbnb.lottie.LottieAnimationView
@@ -74,7 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|center"
-            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.INVISIBLE}"
+            android:visibility="@{vm.isLoading ? View.VISIBLE : View.INVISIBLE}"
             android:scaleType="centerCrop"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"

@@ -38,9 +38,9 @@ class DetailAdapter : ListAdapter<Character, DetailAdapter.DetailViewHolder>(DIF
             R.layout.item_character,
             parent,
             false
-        ).let {
-            it.constraintLayoutItemArea.layoutParams.height = (parent.width / 3) * 2
-            DetailViewHolder(it)
+        ).run {
+            constraintLayoutItemArea.layoutParams.height = (parent.width / 3) * 2
+            DetailViewHolder(this)
         }
 
     override fun onBindViewHolder(holder: DetailViewHolder, position: Int) =
@@ -58,9 +58,9 @@ class DetailAdapter : ListAdapter<Character, DetailAdapter.DetailViewHolder>(DIF
                                     R.layout.dialog_detail,
                                     null,
                                     false
-                            ).also {
-                                it.character = binding.character
-                                it.imageViewDialogDetailPhoto.clipToOutline = true
+                            ).apply {
+                                character = binding.character
+                                imageViewDialogDetailPhoto.clipToOutline = true
                             }.root
                     )
                     cornerRadius(binding.root.context.resources.getDimension(R.dimen.dp_8))
@@ -69,7 +69,7 @@ class DetailAdapter : ListAdapter<Character, DetailAdapter.DetailViewHolder>(DIF
         }
 
         fun bind(item: Character) {
-            binding.apply {
+            with(binding) {
                 character = item
                 executePendingBindings()
             }

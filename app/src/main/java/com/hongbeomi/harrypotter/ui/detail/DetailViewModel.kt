@@ -28,10 +28,10 @@ import kotlinx.coroutines.Dispatchers
 
 class DetailViewModel(house: HouseType, private val repository: Repository) : ViewModel() {
 
-    val characterList : LiveData<List<Character>> = liveData(Dispatchers.IO) {
-        isLoading.postValue(true)
+    val characterList : LiveData<List<Character>> = liveData {
+        isLoading.value = true
         emit(repository.getCharacters(house.name))
-        isLoading.postValue(false)
+        isLoading.value = false
     }
 
     val isLoading = MutableLiveData<Boolean>()

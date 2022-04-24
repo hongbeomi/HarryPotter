@@ -19,7 +19,6 @@
                 android:layout_height="320dp"
                 android:scaleType="fitCenter"
                 android:layout_marginTop="16dp"
-                bind:src="@{house.logo}"
                 android:transitionName="@string/transition_name"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
