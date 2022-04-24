@@ -23,6 +23,7 @@ import com.hongbeomi.harrypotter.base.BaseActivity
 import com.hongbeomi.harrypotter.databinding.ActivityMainBinding
 import com.hongbeomi.harrypotter.ui.HouseType
 import com.hongbeomi.harrypotter.ui.detail.DetailActivity.Companion.startActivityWithTransition
+import com.yarolegovich.discretescrollview.transform.ScaleTransformer
 
 class MainActivity : BaseActivity() {
 
@@ -30,11 +31,23 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.apply {
+        with(binding) {
             lifecycleOwner = this@MainActivity
+            bindDiscreteScroll()
+        }
+    }
+
+    private fun ActivityMainBinding.bindDiscreteScroll() {
+        with(scrollViewMainList) {
             adapter = MainAdapter { view, type ->
                 startActivityWithTransition(this@MainActivity, view, type)
             }
+            setItemTransformer(
+                ScaleTransformer.Builder()
+                    .setMaxScale(1.25f)
+                    .setMinScale(0.8f)
+                    .build()
+            )
         }
     }
 

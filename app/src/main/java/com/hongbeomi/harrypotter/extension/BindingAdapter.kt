@@ -41,26 +41,9 @@ fun setBackgroundColor(view: View, colorId: Int) {
     view.setBackgroundColor(view.context.resources.getColor(colorId))
 }
 
-@BindingAdapter("bind:adapter")
-fun setAdapter(view: RecyclerView, baseAdapter: RecyclerView.Adapter<*>) {
-    view.adapter = baseAdapter
-}
-
 @BindingAdapter("bind:itemDeco")
 fun setDecoration(view: RecyclerView, space: Float) {
     view.addItemDecoration(SpaceItemDecoration(space.toInt(), 3))
-}
-
-@BindingAdapter("bind:transformer")
-fun bindAdapterTransform(view: DiscreteScrollView, isTransform: Boolean) {
-    if (isTransform) {
-        view.setItemTransformer(
-            ScaleTransformer.Builder()
-                .setMaxScale(1.25f)
-                .setMinScale(0.8f)
-                .build()
-        )
-    }
 }
 
 @BindingAdapter("bind:loadUrl")

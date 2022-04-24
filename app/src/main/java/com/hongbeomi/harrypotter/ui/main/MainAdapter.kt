@@ -27,15 +27,11 @@ import com.hongbeomi.harrypotter.databinding.ItemHouseBinding
 import com.hongbeomi.harrypotter.ui.HouseType
 import com.hongbeomi.harrypotter.ui.HouseType.*
 
-class MainAdapter(val action: (ImageView, HouseType) -> Unit) :
-    RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
+class MainAdapter(
+    val onItemClick: (ImageView, HouseType) -> Unit
+) : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
-    private val items = mutableListOf(
-        Gryffindor,
-        Slytherin,
-        Ravenclaw,
-        Hufflepuff
-    )
+    private val items: Array<HouseType> = HouseType.values()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         DataBindingUtil.inflate<ItemHouseBinding>(
@@ -55,7 +51,7 @@ class MainAdapter(val action: (ImageView, HouseType) -> Unit) :
 
         init {
             binding.root.setOnClickListener {
-                action(
+                onItemClick(
                     binding.imageViewItemHouseLogo,
                     items[bindingAdapterPosition]
                 )
@@ -63,7 +59,7 @@ class MainAdapter(val action: (ImageView, HouseType) -> Unit) :
         }
 
         fun bind(item: HouseType) {
-            binding.apply {
+            with(binding) {
                 house = item
                 executePendingBindings()
             }
